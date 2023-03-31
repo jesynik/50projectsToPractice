@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Expanding Cards</title>
+
+	<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+	<ul class="cards-container">
+		<li class="card card-open">
+			<span class="card-text">Card #1 - Expanding Card</span>
+		</li>
+		<li class="card">
+			<span class="card-text">Card #2 - Expanding Card</span>
+		</li>
+		<li class="card">
+			<span class="card-text">Card #3 - Expanding Card</span>
+		</li>
+		<li class="card">
+			<span class="card-text">Card #4 - Expanding Card</span>
+		</li>
+		<li class="card">
+			<span class="card-text">Card #5 - Expanding Card</span>
+		</li>
+	</ul>
+</body>
+
+<script>
+	const cards = document.querySelectorAll(".card");
+
+	cards.forEach((card) => {
+		card.addEventListener("click", (event) => {
+			cards.forEach((currentCard) => {
+				currentCard.classList.remove("card-open");
+			});
+			card.classList.add("card-open");
+		});
+	});
+
+</script>
+</html>

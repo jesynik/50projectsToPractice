@@ -1,0 +1,83 @@
+body {
+	height: 98vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	background-color: #eee;
+}
+
+.progresive-elements{
+	position: relative;
+}
+
+.progresive-numbers {
+	position: relative;
+	width: 350px;
+	max-width: 100%;
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 0;
+}
+
+.progresive-numbers::before, .progresive-bar{
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 344px;
+	border: 3px solid;
+	transform: translateY(-50%);
+}
+
+.progresive-numbers::before{
+	border-color: var(--inactive-color);
+}
+
+.progresive-bar{
+	transition: 0.7s width ease;
+	border-color: #9357e6;
+	width: 0;
+}
+
+li {
+	transition: 0.7s border-color ease;
+	position: relative;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 30px;
+	width: 30px;
+	background-color: var(--white);
+	border: 3px solid var(--inactive-color);
+	border-radius: 50%;
+}
+
+li.active{
+	border-color: var(--primary-color);
+}
+
+.progresive-buttons button {
+	transition: 0.3s background-color ease;
+	background-color: var(--primary-color);
+	color: var(--white);
+	border: 0;
+	border-radius: 6px;
+	cursor: pointer;
+	font-family: inherit;
+	padding: 8px 30px;
+	margin: 5px;
+	font-size: 14px;
+}
+
+.progresive-buttons button:hover {
+	background-color: var(--primary-hover-color);
+}
+
+.progresive-buttons button:disabled{
+	background-color: var(--inactive-color);
+}
